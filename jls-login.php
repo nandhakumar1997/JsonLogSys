@@ -98,7 +98,9 @@ $this->loadRegistrationform();
 }
 
 
-
+private function redirect($location) {
+	header("location: $location");
+}
 
 
 
@@ -222,7 +224,9 @@ if (password_verify($email, $j_email)) {
 	if (password_verify($password, $j_password)) {
 
 
-	echo "success";
+	//lets redirect it to success page
+		$location = "index.php";
+		$this->redirect($location);
 
 	}
 	else {
